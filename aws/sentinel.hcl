@@ -71,7 +71,7 @@ policy "restrict-availability-zones" {
 
 policy "restrict-current-ec2-instance-type" {
   source = "./restrict-current-ec2-instance-type.sentinel"
-  enforcement_level = "hard-mandatory"
+  enforcement_level = "advisory"
 }
 
 policy "restrict-db-instance-engines" {
@@ -81,7 +81,7 @@ policy "restrict-db-instance-engines" {
 
 policy "restrict-ec2-instance-type" {
   source = "./restrict-ec2-instance-type.sentinel"
-  enforcement_level = "advisory"
+  enforcement_level = "hard-mandatory"
 }
 
 policy "restrict-egress-sg-rule-cidr-blocks" {
