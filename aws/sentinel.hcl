@@ -14,11 +14,6 @@ module "aws-functions" {
   source = "./aws-functions/aws-functions.sentinel"
 }
 
-policy "enforce-mandatory-tags" {
-    source = "./restrict-aws-instance-type-and-tag.sentinel"
-    enforcement_level = "hard-mandatory"
-}
-
 policy "check-ec2-environment-tag" {
   source = "./check-ec2-environment-tag.sentinel"
   enforcement_level = "advisory"
