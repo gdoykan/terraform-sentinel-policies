@@ -15,7 +15,7 @@ module "aws-functions" {
 }
 
 policy "enforce-mandatory-tags" {
-    source = "./restrict-aws-instances-type-and-tag.sentinel"
+    source = "./restrict-aws-instance-type-and-tag.sentinel"
     enforcement_level = "hard-mandatory"
 }
 
