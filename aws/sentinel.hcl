@@ -14,6 +14,16 @@ module "aws-functions" {
   source = "./aws-functions/aws-functions.sentinel"
 }
 
+policy "restrict-current-ec2-instance-type" {
+  source = "./restrict-current-ec2-instance-type.sentinel"
+  enforcement_level = "hard-mandatory"
+}
+
+policy "restrict-ec2-instance-type" {
+  source = "./restrict-ec2-instance-type.sentinel"
+  enforcement_level = "hard-mandatory"
+}
+
 policy "check-ec2-environment-tag" {
   source = "./check-ec2-environment-tag.sentinel"
   enforcement_level = "advisory"
@@ -69,19 +79,9 @@ policy "restrict-availability-zones" {
   enforcement_level = "advisory"
 }
 
-policy "restrict-current-ec2-instance-type" {
-  source = "./restrict-current-ec2-instance-type.sentinel"
-  enforcement_level = "advisory"
-}
-
 policy "restrict-db-instance-engines" {
   source = "./restrict-db-instance-engines.sentinel"
   enforcement_level = "advisory"
-}
-
-policy "restrict-ec2-instance-type" {
-  source = "./restrict-ec2-instance-type.sentinel"
-  enforcement_level = "hard-mandatory"
 }
 
 policy "restrict-egress-sg-rule-cidr-blocks" {
